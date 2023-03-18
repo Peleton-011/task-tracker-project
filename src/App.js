@@ -39,7 +39,7 @@ function App() {
                     onDelete={deleteTask}
                 />
             ) : (
-                ""
+                "No tasks yet..."
             )}
         </div>
     );

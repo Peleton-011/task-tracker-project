@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Tasks = () => {
-    return <div></div>;
+    return (
+        <>
+        
+        </>
+    );
 };
 
 export default Tasks;

@@ -3,13 +3,29 @@ import { useState } from "react";
 
 import GenericInput from "./GenericInput";
 
-const AddTask = () => {
+const AddTask = ({onAdd}) => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [reminder, setReminder] = useState(false);
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        if (!name) {
+            //To-Do: improve
+            alert("Please enter a task");
+            return;
+        }
+
+        onAdd({name, date, reminder});
+
+        setName("");
+        setDate("");
+        setReminder(false);
+    }
+
     return (
-        <form className="add-form">
+        <form className="add-form" onSubmit={onSubmit}>
             <GenericInput
                 inputId="task-name"
                 inputLabel="Task"

@@ -8,6 +8,8 @@ const GenericInput = ({
     inputType,
     inputPlaceholder,
     onChange,
+    required,
+    checked,
 }) => {
     return (
         <div className={"form-control " + inputClass}>
@@ -17,6 +19,8 @@ const GenericInput = ({
                 type={inputType}
                 placeholder={inputPlaceholder || ""}
                 onChange={onChange}
+                required={required}
+                checked={checked}                
             />
         </div>
     );
@@ -32,11 +36,13 @@ GenericInput.defaultProps = {
 
 GenericInput.propTypes = {
     inputClass: PropTypes.string,
-    inputID: PropTypes.string.isRequired,
+    inputID: PropTypes.string,
     inputLabel: PropTypes.string.isRequired,
     inputType: PropTypes.string.isRequired,
     inputPlaceholder: PropTypes.string,
     onChange: PropTypes.func,
+    required: PropTypes.bool,
+    checked: PropTypes.bool,
 };
 
 export default GenericInput;

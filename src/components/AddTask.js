@@ -32,6 +32,8 @@ const AddTask = ({ onAdd }) => {
                 inputType="text"
                 inputPlaceholder="Add Task"
                 onChange={(e) => setName(e.target.value)}
+
+                required={true}
             />
             <GenericInput
                 inputId="task-date"

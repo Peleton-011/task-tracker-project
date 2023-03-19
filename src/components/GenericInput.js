@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const GenericInput = () => {
-  return (
-    <div>GenericInput</div>
-  )
-}
+    return <div className="form-control">Dummy Text</div>;
+};
 
-export default GenericInput
+export default GenericInput;

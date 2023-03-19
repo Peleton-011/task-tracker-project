@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import GenericInput from "./GenericInput";
 
-const AddTask = ({ onAdd }) => {
+const AddTask = ({ onAdd, setShowAdd }) => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [reminder, setReminder] = useState(false);
@@ -22,6 +22,8 @@ const AddTask = ({ onAdd }) => {
         setName("");
         setDate("");
         setReminder(false);
+
+        setShowAdd(false);
     };
 
     return (

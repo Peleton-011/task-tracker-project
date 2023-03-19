@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
 import GenericInput from "./GenericInput";
 
-
 const AddTask = () => {
-  return (
-    <div>Form <GenericInput /></div>
-  )
-}
+    return (
+        <form className="add-task">
+            <GenericInput />
+        </form>
+    );
+};
 
-export default AddTask
+export default AddTask;

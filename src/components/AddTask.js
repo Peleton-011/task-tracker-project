@@ -1,11 +1,10 @@
 import React from 'react'
-import InputField from './InputField'
+import GenericInput from "./GenericInput";
+
 
 const AddTask = () => {
   return (
-    <div className="add-form">
-        <InputField />
-    </div>
+    <div>Form <GenericInput /></div>
   )
 }
 

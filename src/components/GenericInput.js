@@ -9,4 +9,10 @@ const GenericInput = () => {
     );
 };
 
+GenericInput.defaultProps = {
+    inputID: "task-name",
+    inputLabel: "Task",
+    inputType: "text",
+};
+
 export default GenericInput;

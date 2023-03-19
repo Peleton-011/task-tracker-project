@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import GenericInput from "./GenericInput";
 
-const AddTask = ({onAdd}) => {
+const AddTask = ({ onAdd }) => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [reminder, setReminder] = useState(false);
@@ -17,12 +17,12 @@ const AddTask = ({onAdd}) => {
             return;
         }
 
-        onAdd({name, date, reminder});
+        onAdd({ name, date, reminder });
 
         setName("");
         setDate("");
         setReminder(false);
-    }
+    };
 
     return (
         <form className="add-form" onSubmit={onSubmit}>
@@ -45,6 +45,7 @@ const AddTask = ({onAdd}) => {
                 inputId="task-reminder"
                 inputLabel="Set Reminder"
                 inputType="checkbox"
+                checked={reminder}
                 onChange={(e) => setReminder(e.currentTarget.checked)}
             />
             <input className="btn btn-block" type="submit" value="Save Task" />

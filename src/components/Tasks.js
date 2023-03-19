@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Task from "./Task";
 
-const Tasks = ({ tasks, setTasks, onDelete, onToggle}) => {
+const Tasks = ({ tasks, setTasks, onDelete, onToggle }) => {
     return (
         <>
             {tasks.map((task) => (

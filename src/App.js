@@ -28,8 +28,8 @@ function App() {
 
     //Add Task
     const addTask = (task) => {
-        console.log(task)
-    }
+        console.log(task);
+    };
 
     //Del Task
     const deleteTask = (id) => {
@@ -48,7 +48,7 @@ function App() {
     return (
         <div className="container">
             <Header title="Task Tracker" />
-            <AddTask onAdd={addTask}/>
+            <AddTask onAdd={addTask} />
             {tasks.length > 0 ? (
                 <Tasks
                     tasks={tasks}

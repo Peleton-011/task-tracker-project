@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const GenericInput = ({ inputID, inputLabel, inputType, inputPlaceholder}) => {
+const GenericInput = ({ inputClass, inputID, inputLabel, inputType, inputPlaceholder}) => {
     return (
-        <div className="form-control">
+        <div className={"form-control " + inputClass}>
             <label htmlFor={inputID}>{inputLabel}</label>
             <input id={inputID} type={inputType} placeholder={inputPlaceholder || ""}/>
         </div>
@@ -11,6 +11,7 @@ const GenericInput = ({ inputID, inputLabel, inputType, inputPlaceholder}) => {
 };
 
 GenericInput.defaultProps = {
+    inputClass: "",
     inputID: "task-name",
     inputLabel: "Task",
     inputType: "text",
@@ -18,6 +19,7 @@ GenericInput.defaultProps = {
 };
 
 GenericInput.propTypes = {
+    inputClass: PropTypes.string,
     inputID: PropTypes.string.isRequired,
     inputLabel: PropTypes.string.isRequired,
     inputType: PropTypes.string.isRequired,

@@ -6,7 +6,7 @@ const AddTask = () => {
         <form className="add-form">
             <GenericInput inputId="task-name" inputLabel="Task" inputType="text" inputPlaceholder="Add Task"/>
             <GenericInput inputId="task-date" inputLabel="Day & Time" inputType="text" inputPlaceholder="Add Day & Time"/>
-            <GenericInput inputId="task-reminder" inputLabel="Set Reminder" inputType="checkbox" />
+            <GenericInput inputClass="form-control-check" inputId="task-reminder" inputLabel="Set Reminder" inputType="checkbox" />
             <input type="submit" value="Save Task"/>
         </form>
     );

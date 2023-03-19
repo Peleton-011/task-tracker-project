@@ -5,39 +5,43 @@ import { useState, useEffect } from "react";
 import AddTask from "./components/AddTask";
 
 function App() {
-
     const [showAddTask, setShowAddTask] = useState(false);
 
     const [tasks, setTasks] = useState([]);
 
-    useEffect(() => {
-        const getTasks = async () => {
-            const tasksFromServer = await fetchTasks()
-            setTasks(tasksFromServer);
-        }
+    useEffect(
+        () => {
+            const getTasks = async () => {
+                const tasksFromServer = await fetchTasks();
+                setTasks(tasksFromServer);
+            };
 
-        getTasks();
-    }, /*Dependency array */ []);
+            getTasks();
+        },
+        /*Dependency array */ []
+    );
 
     //Fetch the tasks
     const fetchTasks = async () => {
         //res => response
-        const res = await fetch("http://localhost:5000/tasks")
+        const res = await fetch("http://localhost:5000/tasks");
         const data = await res.json();
 
         return data;
-    }
+    };
 
     //Add Task
     const addTask = (task) => {
         const id = Math.floor(Math.random() * 1000) + 1;
 
-        const newTask = {id, ...task};
+        const newTask = { id, ...task };
         setTasks([...tasks, newTask]);
     };
 
     //Del Task
-    const deleteTask = (id) => {
+    const deleteTask = async (id) => {
+        await fetch(`http://localhost:5000/tasks/${id}`, { method: "DELETE" });
+
         setTasks(tasks.filter((task) => task.id !== id));
     };
 
@@ -52,8 +56,14 @@ function App() {
 
     return (
         <div className="container">
-            <Header title="Task Tracker" onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
-            {showAddTask && <AddTask onAdd={addTask} setShowAdd={setShowAddTask} />}
+            <Header
+                title="Task Tracker"
+                onAdd={() => setShowAddTask(!showAddTask)}
+                showAdd={showAddTask}
+            />
+            {showAddTask && (
+                <AddTask onAdd={addTask} setShowAdd={setShowAddTask} />
+            )}
             {tasks.length > 0 ? (
                 <Tasks
                     tasks={tasks}

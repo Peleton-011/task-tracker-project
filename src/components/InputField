@@ -1,19 +1,20 @@
 import React from "react";
 
-const InputField = ({inputName, id, type, placeholder}) => {
+const InputField = (/* {inputName, id, type, placeholder} */) => {
     return (
         <div className="form-control">
-            <label htmlFor={id}>{inputName}</label>
-            <input id={id} type="text" placeholder="Add Task" />
         </div>
     );
 };
-
+/*
 InputField.defaultProps = {
     inputName: "Task",
     id: "task-name",
     type: "text",
     placeholder: "Add Task",
 };
+<label htmlFor={id}>{inputName}</label>
+<input id={id} type="text" placeholder="Add Task" />
+*/
 
 export default InputField;

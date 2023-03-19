@@ -3,9 +3,9 @@ import InputField from './InputField'
 
 const AddTask = () => {
   return (
-    <form className="add-form">
-
-    </form>
+    <div className="add-form">
+        <InputField />
+    </div>
   )
 }
 

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom"
 
+import Button from "./Button";
+
 function TaskDetails() {
     const [loading, setLoading] = useState(true);
     const [task, setTask] = useState({});
@@ -31,6 +33,10 @@ function TaskDetails() {
         <div>
             <h3>{task.name}</h3>
             <p>{task.date}</p>
+            <Button onClick={() => {
+                //Go back
+                nav(-1)
+            }} text="Go Back" />
         </div>
     )
 }

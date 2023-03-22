@@ -44,9 +44,7 @@ function TaskDetails() {
                     {task.date}
                 </p>
             </header>
-            {task.description && (
-                <p className="description">{task.description}</p>
-            )}
+            <p className="description">{task.description || "No description available for this task."}</p>
             <Button
                 onClick={() => {
                     //Go back

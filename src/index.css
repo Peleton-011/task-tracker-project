@@ -146,6 +146,7 @@ footer {
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
+    min-height: max-content;
     overflow: hidden;
 }
 

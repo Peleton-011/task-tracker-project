@@ -44,13 +44,16 @@ function TaskDetails() {
                     {task.date}
                 </p>
             </header>
-            {task.description && <p>{task.description}</p>}
+            {task.description && (
+                <p className="description">{task.description}</p>
+            )}
             <Button
                 onClick={() => {
                     //Go back
                     nav(-1);
                 }}
                 text="Go Back"
+                classList="btn-block"
             />
         </aside>
     );

@@ -31,7 +31,7 @@ body {
 
 .btn {
     display: inline-block;
-    background: #000;
+    background: steelblue;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -143,12 +143,20 @@ footer {
 
 .task-desc {
     padding: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    overflow: hidden;
 }
 
 .task-desc > header {
     border-bottom: solid steelblue 1px;
     margin: -20px -20px 0px -20px;
     padding: 10px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .task-desc > header > p > span.date {

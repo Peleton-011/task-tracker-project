@@ -14,6 +14,7 @@ function App() {
 
     const [tasks, setTasks] = useState([]);
 
+    //Get tasks from server with fetchTasks
     useEffect(
         () => {
             const getTasks = async () => {
@@ -35,6 +36,7 @@ function App() {
         return data;
     };
 
+    //Fetch a singular task from server
     const fetchTask = async (id) => {
         //res => response
         const res = await fetch(`http://localhost:5000/tasks/${id}`);
@@ -43,7 +45,7 @@ function App() {
         return data;
     };
 
-    //Add Task
+    //Post task to server
     const addTask = async (task) => {
         const res = await fetch("http://localhost:5000/tasks", {
             method: "POST",
@@ -62,7 +64,7 @@ function App() {
 */
     };
 
-    //Del Task
+    //Delete Task from the server
     const deleteTask = async (id) => {
         await fetch(`http://localhost:5000/tasks/${id}`, { method: "DELETE" });
 

@@ -9,6 +9,7 @@ const AddTask = ({ onAdd, setShowAdd }) => {
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [reminder, setReminder] = useState(false);
+    const [description, setDescription] = useState("");
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -19,11 +20,12 @@ const AddTask = ({ onAdd, setShowAdd }) => {
             return;
         }
 
-        onAdd({ name, date, reminder });
+        onAdd({ name, date, reminder, description});
 
         setName("");
         setDate("");
         setReminder(false);
+        setDescription("")
 
         setShowAdd(false);
     };
@@ -59,6 +61,7 @@ const AddTask = ({ onAdd, setShowAdd }) => {
                     inputLabel="Description"
                     rows={4}
                     maxLen={480}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
                 <GenericInput
                     inputClass="form-control-check"

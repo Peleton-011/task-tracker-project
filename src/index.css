@@ -71,9 +71,11 @@ body {
     justify-content: space-between;
 }
 
+/*
 .add-form {
     margin-bottom: 40px;
 }
+*/
 
 .form-control {
     margin: 20px 0;
@@ -109,4 +111,11 @@ body {
 footer {
     margin-top: 30px;
     text-align: center;
+}
+
+.modal > header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
 }

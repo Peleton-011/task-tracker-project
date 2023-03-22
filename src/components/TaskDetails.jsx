@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Navigate, useNavigate } from "react-router-dom"
+import { useParams, Navigate, useNavigate, useLocation } from "react-router-dom"
 
 import Button from "./Button";
 
@@ -10,6 +10,7 @@ function TaskDetails() {
 
     const params = useParams();
     const nav = useNavigate();
+    const loc = useLocation();
 
     useEffect(() => {
         const fetchTask = async () => {
@@ -31,6 +32,8 @@ function TaskDetails() {
         <h3>Loading...</h3>
     ) : (
         <div>
+            //Show path
+            <p>{loc.pathname}</p>
             <h3>{task.name}</h3>
             <p>{task.date}</p>
             <Button onClick={() => {

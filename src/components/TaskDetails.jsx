@@ -32,8 +32,6 @@ function TaskDetails() {
         <h3>Loading...</h3>
     ) : (
         <div>
-            //Show path
-            <p>{loc.pathname}</p>
             <h3>{task.name}</h3>
             <p>{task.date}</p>
             <Button onClick={() => {

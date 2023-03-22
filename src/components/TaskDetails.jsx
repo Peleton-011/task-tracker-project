@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
-import { useParams, Navigate, useNavigate, useLocation } from "react-router-dom"
+import {
+    useParams,
+    Navigate,
+    useNavigate,
+    useLocation,
+} from "react-router-dom";
 
 import Button from "./Button";
 
@@ -23,7 +28,7 @@ function TaskDetails() {
 
             setTask(data);
             setLoading(false);
-        }
+        };
 
         fetchTask();
     });
@@ -31,15 +36,24 @@ function TaskDetails() {
     return loading ? (
         <h3>Loading...</h3>
     ) : (
-        <div>
-            <h3>{task.name}</h3>
-            <p>{task.date}</p>
-            <Button onClick={() => {
-                //Go back
-                nav(-1)
-            }} text="Go Back" />
-        </div>
-    )
+        <aside className="task-desc container">
+            <header>
+                <h3 className="name">{task.name}</h3>
+                <p>
+                    <span className="date">Date: </span>
+                    {task.date}
+                </p>
+            </header>
+            {task.description && <p>{task.description}</p>}
+            <Button
+                onClick={() => {
+                    //Go back
+                    nav(-1);
+                }}
+                text="Go Back"
+            />
+        </aside>
+    );
 }
 
 export default TaskDetails;

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 
 import GenericInput from "./GenericInput";
+import TextArea from "./TextArea";
 
 const AddTask = ({ onAdd, setShowAdd }) => {
     const [name, setName] = useState("");
@@ -52,6 +53,12 @@ const AddTask = ({ onAdd, setShowAdd }) => {
                     inputType="text"
                     inputPlaceholder="Add Day & Time"
                     onChange={(e) => setDate(e.target.value)}
+                />
+                <TextArea
+                    inputId="task-description"
+                    inputLabel="Description"
+                    rows={4}
+                    maxLen={480}
                 />
                 <GenericInput
                     inputClass="form-control-check"

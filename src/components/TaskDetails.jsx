@@ -25,6 +25,7 @@ function TaskDetails() {
     });
 
     if (error) {
+        alert(error);
         return <Navigate to="/" />
     }
 

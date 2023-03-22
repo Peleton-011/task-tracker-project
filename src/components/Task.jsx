@@ -17,7 +17,7 @@ const Task = ({ task, onDelete, onToggle }) => {
                 />
             </h3>
             <p>{task.date}</p>
-            <p><Link to={`/task/${task.id}`} />View details</p>
+            <Link to={`/task/${task.id}`} />View details<Link/>
         </div>
     );
 };
